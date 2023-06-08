@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fee pay section</title>
+</head>
+<body>
+    <h1> This is Fee pay section </h1>
+    <h3>Please Enter below details to pay Fee</h3>
+    <form method="POST">
+        <table>
+        {{feepay.as_table}}
+        </table>
+     <input type="submit" value="Submit" id="SbtBtn">
+     {% csrf_token %}
+    </form>
+    <p id ="result"></p>
+    <!-- {% if request.COOKIES.amount != "" %}
+        <p> Your transaction is successful...</p>
+    {% endif %} -->
+</body>
+</html>
