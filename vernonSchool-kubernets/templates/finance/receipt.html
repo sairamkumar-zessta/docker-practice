@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fee receipt section</title>
+</head>
+<body>
+    <h1> This is Fee status section </h1>
+    <h3>Here you will get Fee receipt</h3>
+    <table border="1">
+        <thead>
+            <th> Name </th>
+            <th> Class </th>
+            <th> Amount </th>
+            <th>Status</th>
+        </thead>
+        <tr>
+            <td> {{request.session.name}}</td>
+            <td> {{request.session.class}}</td>
+            <td> {{request.session.amount}}</td>
+            {% if 'amount' in request.session %}
+                <td> Success </td>
+            {% endif %}
+        </tr>
+    </table> 
+    {% for key,value in request.session.items %} 
+        {{key}} - {{value}} <br>
+    {% endfor %}
+
+
+
+    <!-- <table border="1">
+        <thead>
+            <th> Name </th>
+            <th> Class </th>
+            <th> Amount </th>
+        </thead>
+        <tr>
+            <td> {{request.COOKIES.name}}</td>
+            <td> {{request.COOKIES.class}}</td>
+            <td> {{request.COOKIES.amount}}</td>
+        </tr>
+    </table> -->
+    <!-- {% for key,value in request.COOKIES.items %}
+        {{key}} - {{value}}<br>
+        {% endfor %} -->
+    <!-- <table border="1">
+        <thead>
+            <th>Name</th>
+            <th>class</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </thead>
+    <tr>
+    <td> {{name}} </td>
+    <td> {{class}} </td>
+    <td> {{amount}} </td>
+    {% if amount != "" %}
+    <td> {{status}} </td>
+    {% endif %}
+    </tr>
+</table>  -->
+</body>
+</html>

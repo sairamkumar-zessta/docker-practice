@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-pod
+  template:
+    metadata:
+      labels:
+        app: django-pod
+    spec:
+      containers:
+        - name: django-cont
+          image: sairamkumar/django_sqllite:2 
